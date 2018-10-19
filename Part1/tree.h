@@ -1,3 +1,6 @@
+#ifndef TREE_H
+#define TREE_H
+
 #include <string>
 
 using namespace std;
@@ -50,3 +53,5 @@ public:
 	void infix_tr(string& out);
 	void postfix_tr(string& out);
 };
+
+#endif
