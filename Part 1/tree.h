@@ -23,6 +23,9 @@ using namespace std;
  * postfix_tr - postfix traverse
  * 		Postorder traversal of the tree
  * 	 arguments - an out string to store the postfix notation
+ *
+ * check_root function
+ * 		Returns true if the root is a propositional atom (i.e. an alphabet)
  */
 
 class tree
@@ -42,6 +45,7 @@ public:
 	}
 	
 	void constr_pt(string s, int& index);
+	bool check_root(void);
 	void setprev(tree* pos);
 	void infix_tr(string& out);
 	void postfix_tr(string& out);

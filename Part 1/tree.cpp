@@ -6,8 +6,6 @@ using namespace std;
 /*
  * tree.cpp
  * implementation of the tree class
- *
- * TODO: print brackets in the infix notation
  */
 
 void tree :: constr_pt(string s, int& index)
@@ -24,41 +22,35 @@ void tree :: constr_pt(string s, int& index)
 	}
 
 	/* If symbol
-	 *	if right node is empty
-	 *		make a new right node
-	 *		set its prev member to the current node in the tree
-	 *		recursively call the right node's constr_pt function on a decremented index
-	 *		
-	 *		if root is a ~ symbol,
-	 *			no left node exists, so return
+	 *	  make a new right node
+	 *	  set its prev member to the current node in the tree
+	 *	  recursively call the right node's constr_pt function on a decremented index
+	 *	  
+	 *	  if root is a ~ symbol,
+	 *	  	no left node exists, so return
 	 *
-	 *		repeat the same with the left node
-	 *
-	 *  TODO: is the right node empty condition seems redundant. Can we do away with it??
+	 *	  repeat the same with the left node
 	 */
 
 	else if (s[index] == '~' || s[index] == 'V' || s[index] == '^' || s[index] == '>')
 	{
-		if (right == NULL)
+		right = new tree[sizeof(tree)];
+		right->setprev(prev);
+		index--;
+		right->constr_pt(s, index);
+
+		if (root == '~')
 		{
+			left = NULL;
+			return;
+		}
+
+		if (index != 0)
+		{
+			left = new tree[sizeof(tree)];	
+			left->setprev(prev);
 			index--;
-			right = new tree[sizeof(tree)];
-			right->setprev(prev);
-			right->constr_pt(s, index);
-
-			if (root == '~')
-			{
-				right = NULL;
-				return;
-			}
-
-			if (index != 0)
-			{
-				left = new tree[sizeof(tree)];	
-				left->setprev(prev);
-				index--;
-				left->constr_pt(s, index);
-			}
+			left->constr_pt(s, index);
 		}
 	}
 }
@@ -76,12 +68,22 @@ void tree :: setprev(tree* pos)
 void tree :: infix_tr(string& out)
 {
 	if (left != NULL)
+	{
+		if (left->check_root())
+			out.push_back('(');
 		left->infix_tr(out);
+	}
+
 
 	out.push_back(root);
 
+	
 	if (right != NULL)
+	{
 		right->infix_tr(out);
+		if (right->check_root())
+			out.push_back(')');
+	}
 }
 
 
@@ -98,4 +100,17 @@ void tree :: postfix_tr(string& out)
 		right->postfix_tr(out);
 
 	out.push_back(root);
+}
+
+
+/*
+	check_root function
+	returns true if the root is a propositional atom (i.e. an alphabet)
+*/
+bool tree :: check_root(void)
+{
+	if (root >='a' && root <='z')
+		return true;
+	else
+		return false;
 }
