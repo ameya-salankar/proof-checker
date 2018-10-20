@@ -5,7 +5,7 @@ using namespace std;
 
 string string_separate(string in)
 {
-	/* To seperate the strings to get the useful part */
+	/**< To seperate the strings to get the useful part */
 	string temp;
 	int i = 0;
 	while (in[i] != '/')
@@ -17,25 +17,25 @@ string string_separate(string in)
 }
 
 void tr_input(vector<string> &tr, string in)
-{ /*To input whatever is the absolute truth in the truth vector*/
+{ /**<To input whatever is the absolute truth in the truth vector*/
 	string temp = string_separate(in);
 	string pf_temp;
-	generate(temp, pf_temp); //generates the postfix substring and stores it in pf_temp
+	generate(temp, pf_temp); /**<generates the postfix substring and stores it in pf_temp*/
 	tr.push_back(pf_temp);
 }
 
 bool and_introduction_check(vector<string> &tr, string in, int pos)
-{			 /*to check for and introduction*/
-	int pos; //vector to store position
+{			 /**<to check for and introduction*/
+	int pos; /**<vector to store position*/
 	string temp = string_separate(in);
 	string pf_temp;
-	generate(temp, pf_temp); //postfix generation and stored in pf_temp
+	generate(temp, pf_temp); /**<postfix generation and stored in pf_temp*/
 	if (pf_temp.back() == '^')
-	{ //first check if and is present
+	{ /**<first check if and is present*/
 		if (is_substring(tr[pos], pf_temp) && is_substring(tr[pos + 2], pf_temp))
 		{
-			//both in universal are part of that in the given test string
-			tr.push_back(pf_temp); //input the correct statement in the truth array
+			/**<both in universal are part of that in the given test string*/
+			tr.push_back(pf_temp); /**<input the correct statement in the truth array*/
 			return true;
 		}
 	}
@@ -46,7 +46,7 @@ bool and_elimination_check(vector<string> &tr, string in, int pos)
 {
 	string temp = string_separate(in);
 	string pf_temp;
-	int pos; //to get the line number
+	int pos; /**<to get the line number*/
 	generate(temp, pf_temp);
 	if (is_substring(pf_temp, tr[pos]))
 	{
@@ -72,25 +72,28 @@ bool or_introduction_check(vector<string> &tr, string in, int pos)
 	return false;
 }
 
-bool impl_elimination_check(vector<string> &tr, string in, int pos)
+bool impl_elimination_check(vector<string> &tr, string in, int k)
 {
+	int pos = in[k] - '0';
 	string temp = string_separate(in);
 	string pf_temp;
 	generate(temp, pf_temp);
 
 	if (pf_temp.back() == '>')
 	{
-		//if p is substring of p > q and
-		//  first element of postfixes of p and p>q are same and
-		//  q is a substring of p>q
-		//  then true
+		/**
+		 * if p is substring of p > q and
+		 * first element of postfixes of p and p>q are same and
+		 * q is a substring of p>q
+		 * then true
+		 */
 
 		if ((is_substring(tr[pos + 2], tr[pos])) && is_substring(pf_temp, tr[pos]))
 		{
 			int l = tr[pos + 2].length();
-			if (tr[pos + 2][0] == tr[pos][0])
+			if (check_impl_left(tr[pos + 2], tr[pos]))
 			{
-				if (tr[pos][l] == pf_temp[0])
+				if (check_impl_right(pf_temp, tr[pos], l))
 				{
 					tr.push_back(pf_temp);
 					return true;
@@ -99,6 +102,13 @@ bool impl_elimination_check(vector<string> &tr, string in, int pos)
 		}
 	}
 	return false;
+}
+
+bool mt_check(vector<string> &tr, string in, int pos)
+{
+	string temp = string_separate(in);
+	string pf_temp;
+	generate(temp, pf_temp);
 }
 
 bool is_substring(string sub, string str)
@@ -121,4 +131,34 @@ bool is_substring(string sub, string str)
 
 		j = 0;
 	}
+}
+
+bool check_impl_left(string part, string whole)
+{
+	int l = part.length(), l2 = whole.length();
+	for(int i = 0, j = 0; i < l && j < l2; i++, j++)
+	{
+		if(part[i] != whole[j])
+			break;
+	}
+
+	if(i == l)
+		return true;
+	else
+		return false;
+}
+
+bool check_impl_right(string part, string whole, int start)
+{
+	int l = part.length(), l2 = whole.length();
+	for (int i = 0, j = start; i < l && j < l2; i++, j++)
+	{
+		if (part[i] != whole[j])
+			break;
+	}
+
+	if (i == l)
+		return true;
+	else
+		return false;
 }
