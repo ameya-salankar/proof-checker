@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 #include "postfix.h"
+#include "functions.h"
+
 using namespace std;
 
 bool check (vector<string>& v)
@@ -22,12 +24,17 @@ bool check (vector<string>& v)
             case 'P':
                 tr_input(tr, v[i]);
                 break;
+            
+            
             case '^':
                 c++;
                 if (v[i][c] == 'i')
                 {
-                    and_introduction_check(tr, v[i]);
-                    break;
+                    int k = c+2;
+                    verdict = and_introduction_check(tr, v[i], k);
+                    // if (!verdict)
+                    //     return verdict;
+                    // break;
                 }
                 else if (v[i][c] == 'e')
                 {
@@ -36,26 +43,42 @@ bool check (vector<string>& v)
                         check if the whole statement v[v[i][k]] is in tr
                         and this line is one of its parts
                     */
-                    and_elimination_check(tr, v[i]);
+                    verdict = and_elimination_check(tr, v[i], k);
                 }
+                if (!verdict)
+                    return verdict;
                 break;
+            
+            
             case 'V':
+                int k = c + 4;
                 /*
                     check if either of the constituents are in tr
                 */
-                or_introduction_check(tr, v[i]);
+                verdict = or_introduction_check(tr, v[i], k);
+                if (!verdict)
+                    return verdict;
                 break;
+            
+            
             case '>':
-                int k = c + 3;
+                int k = c + 4;
                 /*
                     check if the lines p:v[v[i][k]] and
                     q:v[v[i][k+1]] are in tr
                     and q should be the left part of > in p
                 */
-				impl_elimination_check(tr,v[i]);
+				verdict = impl_elimination_check(tr, v[i], k);
+                if (!verdict)
+                    return verdict;
                 break;
+            
+            
             case 'M':
                 int k = c + 3;
+                verdict = mt_check(tr, v[i], k);
+                if (!verdict)
+                    return verdict;
                 break;
 
             default:
