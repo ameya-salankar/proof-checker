@@ -109,6 +109,23 @@ bool mt_check(vector<string> &tr, string in, int pos)
 	string temp = string_separate(in);
 	string pf_temp;
 	generate(temp, pf_temp);
+	pf_temp.pop_back();
+	int l = pf_temp.length(), l1 = (in[pos]-'0') - 1, l2 = (in[pos+2]-'0') - 1;
+	string pro = tr[l2];
+	pro.pop_back();
+
+	if(is_substring(pf_temp, tr[l1]) && is_substring(pro, tr[l1]))
+	{
+		if(check_impl_right(pro, tr[l1], l))
+		{
+			if(check_impl_left(pf_temp, tr[l1]))
+			{
+				tr.push_back(pf_temp);
+					return true;
+			}
+		}
+	}
+	return false;
 }
 
 bool is_substring(string sub, string str)
@@ -135,8 +152,8 @@ bool is_substring(string sub, string str)
 
 bool check_impl_left(string part, string whole)
 {
-	int l = part.length(), l2 = whole.length();
-	for(int i = 0, j = 0; i < l && j < l2; i++, j++)
+	int l = part.length(), l2 = whole.length(), i, j;
+	for(i = 0, j = 0; i < l && j < l2; i++, j++)
 	{
 		if(part[i] != whole[j])
 			break;
@@ -150,8 +167,8 @@ bool check_impl_left(string part, string whole)
 
 bool check_impl_right(string part, string whole, int start)
 {
-	int l = part.length(), l2 = whole.length();
-	for (int i = 0, j = start; i < l && j < l2; i++, j++)
+	int l = part.length(), l2 = whole.length(), i , j;
+	for (i = 0, j = start; i < l && j < l2; i++, j++)
 	{
 		if (part[i] != whole[j])
 			break;

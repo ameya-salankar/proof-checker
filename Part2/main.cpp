@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "check.cpp"
 
 using namespace std;
 
