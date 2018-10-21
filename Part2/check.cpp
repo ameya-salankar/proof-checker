@@ -4,19 +4,22 @@
 // check.cpp
 #include <iostream>
 #include <vector>
-#include "postfix.h"
-#include "functions.h"
+#include "helpers.h"
+#include "and.h"
+#include "or.h"
+#include "impl.h"
 
 using namespace std;
 
 bool check (vector<string>& v)
 {
     vector<string> tr;
-    bool verdict;
-    int c;
+    bool verdict=false;
+    int c, k=0;
     for (int i = 0; i < v.size(); ++i)
     {
-        while(v[i][c] != '/') c++;
+        while (c < v[i].length() && v[i][c] != '/')
+            c++;
         c++;
 
         switch(v[i][c])
@@ -30,7 +33,7 @@ bool check (vector<string>& v)
                 c++;
                 if (v[i][c] == 'i')
                 {
-                    int k = c+2;
+                    k = c+2;
                     verdict = and_introduction_check(tr, v[i], k);
                     // if (!verdict)
                     //     return verdict;
@@ -38,7 +41,7 @@ bool check (vector<string>& v)
                 }
                 else if (v[i][c] == 'e')
                 {
-                    int k = c + 2;
+                    k = c + 2;
                     /*
                         check if the whole statement v[v[i][k]] is in tr
                         and this line is one of its parts
@@ -51,7 +54,7 @@ bool check (vector<string>& v)
             
             
             case 'V':
-                int k = c + 4;
+                k = c + 4;
                 /*
                     check if either of the constituents are in tr
                 */
@@ -62,7 +65,7 @@ bool check (vector<string>& v)
             
             
             case '>':
-                int k = c + 4;
+                k = c + 4;
                 /*
                     check if the lines p:v[v[i][k]] and
                     q:v[v[i][k+1]] are in tr
@@ -75,7 +78,7 @@ bool check (vector<string>& v)
             
             
             case 'M':
-                int k = c + 3;
+                k = c + 3;
                 verdict = mt_check(tr, v[i], k);
                 if (!verdict)
                     return verdict;

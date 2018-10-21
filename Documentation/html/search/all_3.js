@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['generate',['generate',['../postfix_8cpp.html#ad2b2f4e40ff9f966a4bdee2ad4010d84',1,'generate(string &amp;input_taken, string &amp;postfix):&#160;postfix.cpp'],['../postfix_8h.html#ad2b2f4e40ff9f966a4bdee2ad4010d84',1,'generate(string &amp;input_taken, string &amp;postfix):&#160;postfix.cpp']]]
+  ['helpers_2ecpp',['helpers.cpp',['../helpers_8cpp.html',1,'']]],
+  ['helpers_2eh',['helpers.h',['../helpers_8h.html',1,'']]]
 ];

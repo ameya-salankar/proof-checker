@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp',['main.cpp',['../_part1_2main_8cpp.html',1,'(Global Namespace)'],['../_part2_2main_8cpp.html',1,'(Global Namespace)']]]
+  ['helpers_2ecpp',['helpers.cpp',['../helpers_8cpp.html',1,'']]],
+  ['helpers_2eh',['helpers.h',['../helpers_8h.html',1,'']]]
 ];
