@@ -6,6 +6,6 @@
 
 using namespace std;
 
-bool or_introduction_check(vector<string> &tr, string in, int pos);
+bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string> &v);
 
 #endif

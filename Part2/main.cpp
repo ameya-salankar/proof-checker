@@ -17,7 +17,10 @@ int main (void)
 		cin >> str;
 		v.push_back(str);
 	}
-
+	// for (int i = 0; i < length; ++i)
+	// {
+	// 	cout<<v[i]<<endl;
+	// }
 	if (check(v))
 		cout << "Valid Proof" << endl;
 	else

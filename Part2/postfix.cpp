@@ -12,21 +12,22 @@ void generate(string& input_taken, string& postfix)
     input.push_back(')');
     
     int n = input.size();
-    
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        if(!(input[i]>='a' && input[i]<='z'))
+        if (!(input[i] >= 'a' && input[i] <= 'z'))
         {
-            add_stack(op,input[i]);//adding operator to stack
-            if(i>0)
-                check_bracket(op,postfix);//check for right bracket if present then pop it after that print all elements till left bracket and  stop at left bracket
+            add_stack(op, input[i]); //adding operator to stack
+            if (i > 0)
+                check_bracket(op, postfix); //check for right bracket if present then pop it after that print all elements till left bracket and  stop at left bracket
         }
         else
         {
-            postfix.push_back(input[i]);//adding literals to the postfix
-            check_negation(op,postfix);//checking for negation after postfix
+            postfix.push_back(input[i]); //adding literals to the postfix
+            check_negation(op, postfix); //checking for negation after postfix
         }
     }
+    
+
 
     // cout << "final postfix : " << postfix << endl;
 

@@ -181,4 +181,5 @@ bool is_substring(string sub, string str)
 
 		j = 0;
 	}
+	return false;
 }

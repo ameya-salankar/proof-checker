@@ -15,17 +15,24 @@ bool check (vector<string>& v)
 {
     vector<string> tr;
     bool verdict=false;
-    int c, k=0;
+    int c=0, k=0;
+    // cout << "Iwashere";
     for (int i = 0; i < v.size(); ++i)
-    {
-        while (c < v[i].length() && v[i][c] != '/')
+    {   c = 0;
+        // cout << "Iwashere"<<endl;
+        while (c < v[i].length() && v[i][c] != '/'){
+            cout<<v[i][c];
             c++;
+            
+        } 
+
         c++;
 
         switch(v[i][c])
         {
             case 'P':
                 tr_input(tr, v[i]);
+                verdict = true;
                 break;
             
             
@@ -33,7 +40,8 @@ bool check (vector<string>& v)
                 c++;
                 if (v[i][c] == 'i')
                 {
-                    k = c+2;
+                    k = c + 2;
+                    cout << "I was here";
                     verdict = and_introduction_check(tr, v[i], k);
                     // if (!verdict)
                     //     return verdict;
@@ -41,12 +49,12 @@ bool check (vector<string>& v)
                 }
                 else if (v[i][c] == 'e')
                 {
-                    k = c + 2;
+                    k = c + 1;
                     /*
                         check if the whole statement v[v[i][k]] is in tr
                         and this line is one of its parts
                     */
-                    verdict = and_elimination_check(tr, v[i], k);
+                    verdict = and_elimination_check(tr, v[i], k, v);
                 }
                 if (!verdict)
                     return verdict;
@@ -54,18 +62,18 @@ bool check (vector<string>& v)
             
             
             case 'V':
-                k = c + 4;
+                k = c + 2;
                 /*
                     check if either of the constituents are in tr
                 */
-                verdict = or_introduction_check(tr, v[i], k);
+                verdict = or_introduction_check(tr, v[i], k, v);
                 if (!verdict)
                     return verdict;
                 break;
             
             
             case '>':
-                k = c + 4;
+                k = c + 3;
                 /*
                     check if the lines p:v[v[i][k]] and
                     q:v[v[i][k+1]] are in tr
@@ -88,7 +96,9 @@ bool check (vector<string>& v)
                 verdict = true;
         }
     }
-
-    fin:
+    for(int i=0;i<tr.size();i++){
+        cout<<endl<<"tr: "<<endl<<tr[i]<<endl;
+    }
+    // fin:
     return verdict;
 }
