@@ -17,9 +17,6 @@ int main(void)
 
 	int l = in.length()-1;
 
-	//Debugging print statement. DO NOT use in final code
-	// cout << in << endl << l << endl;
-
 	tree my_tree;
 	my_tree.constr_pt(in, l);
 	my_tree.infix_tr(out1);

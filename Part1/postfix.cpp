@@ -1,5 +1,6 @@
 #include <iostream>
 #include "postfix.h"
+
 using namespace std;
 
 void generate(string& input_taken, string& postfix)

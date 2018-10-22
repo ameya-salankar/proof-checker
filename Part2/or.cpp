@@ -5,10 +5,9 @@ using namespace std;
 
 bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string>& v)
 {
-    string temp = string_separate(in);
+    string temp = string_separate(in), pf_temp, pf_sub;
     
     int l1 = (in[pos] - '0'), l2 = (in[pos + 2] - '0') - 1;
-    string pf_temp, pf_sub;
     /*l1 is type of elimination and l2 is line number of the and statement*/
 
     stack<char> check;
@@ -18,20 +17,14 @@ bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string
     generate(temp, pf_temp);
     generate(sub, pf_sub);
 
-    cout << "sub: "<<sub<<' '<<pf_sub<<endl;
-    cout << "temp: " << temp << ' ' << pf_temp<<endl;
+    string left, right;
 
-    string left;
-    string right;
     check.push('(');
-    for (int i = 0; i < temp.length(); i++)
+    if (l1 == 1)
     {
-        if (l1 == 1)
+        for (int i = 0; i < temp.length(); i++)
         {
-            //something will happen
-            cout<<"temp[i]: "<<temp[i]<<endl;
-            left += temp[i];
-            cout<<"left.push_back: "<<left<<endl;
+            left.push_back(temp[i]);
 
             if (temp[i] == '(')
                 check.push(temp[i]);
@@ -42,7 +35,7 @@ bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string
             {
                 string pf_left;
                 generate(left, pf_left);
-                cout<<endl<<"left: "<<left<<' '<<pf_left<<endl;
+
                 if (pf_left == pf_sub)
                 {
                     tr.push_back(pf_temp);
@@ -50,7 +43,10 @@ bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string
                 }
             }
         }
-        else if (l1 == 2)
+    }
+    else if (l1 == 2)
+    {
+        for (int i = 0; i < temp.length(); i++)
         {
             if (temp[i] == '(')
                 check.push(temp[i]);
@@ -65,8 +61,6 @@ bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string
                 string pf_right;
                 generate(right, pf_right);
 
-                cout << endl<< "right: " << right << ' ' << pf_right << endl;
-
                 if (pf_right == pf_sub)
                 {
                     tr.push_back(pf_temp);
@@ -75,18 +69,6 @@ bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string
             }
         }
     }
+
     return false;
-    // string temp = string_separate(in);
-    // string pf_temp;
-    // int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
-    // generate(temp, pf_temp);
-    // if (pf_temp.back() == 'V')
-    // {
-    //     if (is_substring(tr[l1], pf_temp))
-    //     {
-    //         tr.push_back(pf_temp);
-    //         return true;
-    //     }
-    // }
-    // return false;
 }
