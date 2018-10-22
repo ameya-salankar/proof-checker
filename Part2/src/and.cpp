@@ -4,12 +4,12 @@
 
 using namespace std;
 
-bool and_introduction_check(vector<string> &tr, string in, int pos) /**< checks for the correctness of and introduction */
+bool and_introduction_check(vector<string> &tr, string in, int l1, int l2) /**< checks for the correctness of and introduction */
 {
     string temp = string_separate(in), pf_temp;
     generate(temp, pf_temp);                /**<postfix generation and stored in pf_temp*/
 
-    int l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
+    // int l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
 
     if (pf_temp.back() == '^')              /**<first check if and is present*/
     {
@@ -27,12 +27,12 @@ bool and_introduction_check(vector<string> &tr, string in, int pos) /**< checks 
     return false;
 }
 
-bool and_elimination_check(vector<string> &tr, string in, int pos,vector<string>& v)
+bool and_elimination_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {
     string temp = string_separate(in), pf_temp;
     generate(temp, pf_temp);
 
-    int l1 = (in[pos] - '0'), l2 = (in[pos + 2] - '0') - 1;
+    // int l1 = (in[pos] - '0'), l2 = (in[pos + 2] - '0') - 1;
     /*l1 is type of elimination and l2 is line number of the and statement*/
     
     stack<char> check;

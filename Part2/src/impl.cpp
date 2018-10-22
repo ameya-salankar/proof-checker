@@ -3,12 +3,12 @@
 
 using namespace std;
 
-bool impl_elimination_check(vector<string> &tr, string in, int pos)
+bool impl_elimination_check(vector<string> &tr, string in, int l1, int l2)
 {
     string temp = string_separate(in), pf_temp;
     generate(temp, pf_temp);
 
-    int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
+    // int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
     
     if (tr[l1].back() == '>')
     {
@@ -34,13 +34,13 @@ bool impl_elimination_check(vector<string> &tr, string in, int pos)
     return false;
 }
 
-bool mt_check(vector<string> &tr, string in, int pos)
+bool mt_check(vector<string> &tr, string in, int l1, int l2)
 {
     string temp = string_separate(in), pf_temp;
     generate(temp, pf_temp);
     pf_temp.pop_back();
     
-    int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
+    // int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
 
     string pf_right = tr[l2];
     pf_right.pop_back();

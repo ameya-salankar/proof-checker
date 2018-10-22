@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <iostream>
 
 using namespace std;
 
@@ -44,4 +45,18 @@ bool is_substring(string sub, string str)
 		j = 0;
 	}
 	return false;
+}
+
+int extract(string s, int& c)
+{
+	string num;
+	int k = c+1;
+	
+	while (s[k] != '/' && s[k] != '\0')
+		num.push_back(s[k++]);
+	
+	c = k;
+	
+	k = stoi(num);
+	return k;
 }

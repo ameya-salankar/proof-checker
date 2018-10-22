@@ -3,11 +3,11 @@
 
 using namespace std;
 
-bool or_introduction_check(vector<string> &tr, string in, int pos, vector<string>& v)
+bool or_introduction_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {
     string temp = string_separate(in), pf_temp, pf_sub;
     
-    int l1 = (in[pos] - '0'), l2 = (in[pos + 2] - '0') - 1;
+    // int l1 = (in[pos] - '0'), l2 = (in[pos + 2] - '0') - 1;
     /*l1 is type of elimination and l2 is line number of the and statement*/
 
     stack<char> check;
