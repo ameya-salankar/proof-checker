@@ -9,7 +9,7 @@ using namespace std;
  * output-valid proof/invalid proof
  * 
 */
-int main (void)
+void start_part2 (void)
 {
 	int length;
 	string str;
@@ -27,6 +27,4 @@ int main (void)
 		cout << "Valid Proof" << endl;
 	else
 		cout << "Invalid Proof" << endl;
-
-	return 0;
 }

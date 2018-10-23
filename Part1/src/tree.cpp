@@ -3,17 +3,17 @@
 
 using namespace std;
 
-/*
+/**
  * tree.cpp
  * implementation of the tree class
  */
 
 void tree :: constr_pt(string s, int& index)
 {
-	//Set the root variable
+	///Set the root variable
 	root = s[index];
 
-	//If propositional atom, declare it a leaf and return
+	///If propositional atom, declare it a leaf and return
 	if ((s[index] >= 'a' && s[index] <= 'z') || index == 0)
 	{
 		left = NULL;
@@ -21,7 +21,8 @@ void tree :: constr_pt(string s, int& index)
 		return;
 	}
 
-	/* If symbol
+	/**
+	 * If symbol
 	 *	  make a new right node
 	 *	  set its prev member to the current node in the tree
 	 *	  recursively call the right node's constr_pt function on a decremented index
@@ -61,23 +62,17 @@ void tree :: setprev(tree* pos)
 }
 
 
-/*
+/**
 	infix_tr function
 	traverses in the order : left root right
 */
 void tree :: infix_tr(string& out)
 {
-	static int x = 0;
-
-	//Safeguard against printing an extra bracket
-	if (x == 0)
-		x = 1;
-	else if (!check_root())
+	if (!check_root())
 		out.push_back('(');
 	
 	if (left != NULL)
 		left->infix_tr(out);
-
 
 	out.push_back(root);
 
@@ -85,13 +80,13 @@ void tree :: infix_tr(string& out)
 	if (right != NULL)
 	{
 		right->infix_tr(out);
-		if (right->check_root())
+		if (!check_root())
 			out.push_back(')');
 	}
 }
 
 
-/*
+/**
 	postfix_tr function
 	traverses in the order : left right root
 */
@@ -107,7 +102,7 @@ void tree :: postfix_tr(string& out)
 }
 
 
-/*
+/**
 	check_root function
 	returns true if the root is a propositional atom (i.e. an alphabet)
 */

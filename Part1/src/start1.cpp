@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include "tree.h"
+#include "postfix.h"
 
 using namespace std;
 
@@ -10,20 +11,21 @@ using namespace std;
  *        output-postfix and infix of logical expression
  */
 
-int main(void)
+void start_part1(void)
 {
-	string in, out1, out2;
+	string in, in_pf, out1, out2, c;
 
+	getline(cin, c);
 	getline(cin, in);
 
-	int l = in.length()-1;
+	generate(in, in_pf);
+
+	int l = in_pf.length()-1;
 
 	tree my_tree;
-	my_tree.constr_pt(in, l);
+	my_tree.constr_pt(in_pf, l);
 	my_tree.infix_tr(out1);
 	my_tree.postfix_tr(out2);
 
 	cout << "Infix: " << out1 << endl << "Postfix: " << out2 << endl;
-
-	return 0;
 }
