@@ -4,9 +4,9 @@
 using namespace std;
 
 /**
- * \brief the main checking logic, central checking functions caller
- * 
- * 
+ * \brief Seperates the string argument into required string to work on
+ * \param in string argument
+ * \return The separated string
  */
 string string_separate(string in)
 {
@@ -19,7 +19,11 @@ string string_separate(string in)
 	}
 	return temp;
 }
-
+/**
+ * \brief Takes the argument string and adds it to the universal truth array 
+ * \param in string argument
+ * \param tr universal truth vector
+ */
 void tr_input(vector<string> &tr, string in)
 { 
 	string temp = string_separate(in);
@@ -27,31 +31,12 @@ void tr_input(vector<string> &tr, string in)
 	generate(temp, pf_temp); 
 	tr.push_back(pf_temp);
 }
-
-bool is_substring(string sub, string str)
-{
-	int l = str.length(), i, j = 0;
-
-	for (i = 0; i < l; i++)
-	{
-		if (str[i] == sub[j])
-		{
-			while (str[i] == sub[j] && j < sub.length())
-			{
-				i++;
-				j++;
-			}
-		}
-		if (j == sub.length())
-			return true;
-
-		i -= j;
-
-		j = 0;
-	}
-	return false;
-}
-
+/**
+ * \brief Takes the argument string and extracts the line number(s) mentioned
+ * \param s string argument
+ * \param c integer argument
+ * \return (integer)The line number
+ */
 int extract(string s, int& c)
 {
 	string num;

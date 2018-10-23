@@ -4,9 +4,12 @@
 
 using namespace std;
 /**
- * \brief check statement for and introduction
- * 
- * 
+ * \brief checks proof statement for and introduction
+ * \param tr universal truth vector
+ * \param in the input string
+ * \param l1 integer argument gives line number
+ * \param l2 integer argument gives line number
+ * \return boolean value either true or false
 */
 bool and_introduction_check(vector<string> &tr, string in, int l1, int l2) /**< checks for the correctness of and introduction */
 {
@@ -28,7 +31,14 @@ bool and_introduction_check(vector<string> &tr, string in, int l1, int l2) /**< 
 
     return false;
 }
-
+/**
+ * \brief checks proof statement for and elimination
+ * \param tr universal truth vector
+ * \param in the input string
+ * \param l1 integer argument gives type of and elimination
+ * \param l2 integer argument gives line number
+ * \return boolean value either true or false
+*/
 bool and_elimination_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {
     string temp = string_separate(in), pf_temp;
