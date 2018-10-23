@@ -46,5 +46,5 @@ $(ODIR2):
 .PHONY: clean
 
 clean:
-	rm -r $(ODIR1)/*.o
-	rm -r $(ODIR2)/*.o
+	rm -rf $(ODIR1)/*.o
+	rm -rf $(ODIR2)/*.o
