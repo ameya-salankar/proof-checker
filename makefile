@@ -6,7 +6,6 @@ SDIR1=Part1/src
 SDIR2=Part2/src
 CC=g++
 CFLAGS=-I$(IDIR1) -I$(IDIR2) -std=c++11
-# VPATH = src:../src
 
 DEP=start.h
 
@@ -26,10 +25,10 @@ OBJ2 = $(patsubst $(ODIR2)/postfix.o,$(ODIR1)/postfix.o,$(_OBJ22))
 # $(info $$DEPS2 is [${DEPS2}])
 # $(info $$OBJ2 is [${OBJ2}])
 
-$(ODIR1)/%.o: $(SDIR1)/%.cpp $(DEPS1) $(DEP)
+$(ODIR1)/%.o: $(SDIR1)/%.cpp $(DEPS1) $(DEP) | $(ODIR1)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(ODIR2)/%.o: $(SDIR2)/%.cpp $(DEPS1) $(DEPS2) $(DEP)
+$(ODIR2)/%.o: $(SDIR2)/%.cpp $(DEPS1) $(DEPS2) $(DEP) | $(ODIR2)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 a.out: $(OBJ1) $(OBJ2) $(ODIR2)/main.o
@@ -37,6 +36,12 @@ a.out: $(OBJ1) $(OBJ2) $(ODIR2)/main.o
 
 $(ODIR2)/main.o: main.cpp $(DEPS1) $(DEPS2) $(DEP)
 	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(ODIR1):
+	mkdir -p $(ODIR1)
+
+$(ODIR2):
+	mkdir -p $(ODIR2)
 
 .PHONY: clean
 
