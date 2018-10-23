@@ -3,10 +3,13 @@
 
 using namespace std;
 /**
- * \brief check statement for or introduction
- *        parameters-vector<string> &tr, string in, int l1, int l2, vector<string>& v
- *        return type-true/false
- *        Note-
+ * \brief checks proof statement for or introduction
+ * \param in string argument
+ * \param tr universal truth vector
+ * \param l1 integer argument
+ * \param l2 integer argument
+ * \param v vector of input strings 
+ * \return boolean value validity of proof statement
 */
 bool or_introduction_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {

@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/**
+ * \brief Takes two string arguments and generates postfix string
+ * \param input_taken a string argument
+ * \param postfix a string argument
+*/
 void generate(string& input_taken, string& postfix)
 {
     string input;   /**< working input */
@@ -31,12 +36,22 @@ void generate(string& input_taken, string& postfix)
 
     return;
 }
-
+/**
+ * \brief takes a charachter argument and adds it to the operator stack
+ * \param op a stack
+ * \param in charachter argument
+ * \sa generate(),ad_stack(),check_negation(),check_bracket()
+*/
 void add_stack(stack<char>& op_in, char in)
 {
     op_in.push(in);                         /**< adding operator to stack */
 }
-
+/**
+ * \brief takes the operator stack and checks for presence of negation operator
+ * \param op a stack
+ * \param postfix string argument
+ * \sa generate(),ad_stack(),check_negation(),check_bracket()
+*/
 void check_negation(stack<char>& op_check, string& postfix)
 {
     if(op_check.size() == 0)
@@ -47,7 +62,12 @@ void check_negation(stack<char>& op_check, string& postfix)
         op_check.pop();
     }
 }
-
+/**
+ * \brief takes the operator stack and checks for presence of closing { ')' } bracket
+ * \param op a stack
+ * \param postfix string argument
+ * \sa generate(),ad_stack(),check_negation(),check_bracket()
+*/
 void check_bracket(stack<char>& op_brack, string& postfix)
 {
     if(op_brack.top() == ')')

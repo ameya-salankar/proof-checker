@@ -4,9 +4,9 @@
 
 using namespace std;
 /**
- * main file
- * input-string
- * output-valid proof/invalid proof
+ * \brief main file
+ * input - string
+ * output- valid proof/invalid proof
  * 
 */
 void start_part2 (void)

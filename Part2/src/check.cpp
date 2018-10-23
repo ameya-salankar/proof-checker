@@ -8,9 +8,8 @@
 using namespace std;
 /**
 *\brief checks the validity of proof
-*       parameter-string 
-*       returns type- true/false
-*       note-
+*\param v vector of strings (input given by user)
+*\return boolean value validity of proof
 */
 bool check (vector<string>& v)
 {
