@@ -4,7 +4,7 @@
 
 using namespace std;
 
-/*
+/**
  * main.cpp
  * performs i/o and stuff
  */

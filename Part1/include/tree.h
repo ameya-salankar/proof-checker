@@ -37,7 +37,7 @@ private:
 	tree *prev;  	/**< pointer to the parent */
 
   public:
-	tree() /**< default constructor - set all the pointers to NULL */
+	tree() 			/**< default constructor - set all the pointers to NULL */
 	{
 		prev = NULL;
 		right = NULL;

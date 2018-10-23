@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/**
+ * 
+ * 
+ * 
+ */
 string string_separate(string in)
 {
 	string temp;
