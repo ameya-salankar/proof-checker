@@ -3,7 +3,12 @@
 #include "helpers.h"
 
 using namespace std;
-
+/**
+ * main file
+ * input-string
+ * output-valid proof/invalid proof
+ * 
+*/
 int main (void)
 {
 	int length;

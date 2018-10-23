@@ -6,7 +6,12 @@
 #include "impl.h"
 
 using namespace std;
-
+/**
+*\brief checks the validity of proof
+*       parameter-string 
+*       returns type- true/false
+*       note-
+*/
 bool check (vector<string>& v)
 {
     vector<string> tr;
@@ -29,15 +34,27 @@ bool check (vector<string>& v)
                 c++;
                 if (v[i][c] == 'i')
                 {
-                    c++; //Pass at '/'
+                    c++;                        //Pass at '/'
                     l1 = extract(v[i], c);
                     l2 = extract(v[i], c);
+                    if(l1 > tr.size() || l2 > tr.size())
+                    {
+                        cout << "Invalid Proof" << endl;
+                        exit(0);
+                    }
+                
                     verdict = and_introduction_check(tr, v[i], l1-1, l2-1);
                 }
                 else if (v[i][c] == 'e')
                 {
                     l1 = extract(v[i], c);
                     l2 = extract(v[i], c);
+                    if (l1 > tr.size() || l2 > tr.size())
+                    {
+                        cout << "Invalid Proof" << endl;
+                        exit(0);
+                    }
+                
                     verdict = and_elimination_check(tr, v[i], l1, l2-1, v);
                 }
 
@@ -47,8 +64,20 @@ bool check (vector<string>& v)
 
             case 'V':
                 c++;
+                if(v[i][c] == 'e')
+                {
+                    verdict = true;
+                    break;
+                }
+                
                 l1 = extract(v[i], c);
                 l2 = extract(v[i], c);
+                if (l1 > tr.size() || l2 > tr.size())
+                {
+                    cout << "Invalid Proof" << endl;
+                    exit(0);
+                }
+
                 verdict = or_introduction_check(tr, v[i], l1, l2-1, v);
                 
                 if (!verdict)
@@ -58,8 +87,20 @@ bool check (vector<string>& v)
             
             case '>':
                 c += 2;
+                if (v[i][c-1] == 'i')
+                {
+                    verdict = true;
+                    break;
+                }
+
                 l1 = extract(v[i], c);
                 l2 = extract(v[i], c);
+                if (l1 > tr.size() || l2 > tr.size())
+                {
+                    cout << "Invalid Proof" << endl;
+                    exit(0);
+                }
+
                 verdict = impl_elimination_check(tr, v[i], l1-1, l2-1);
 
                 if (!verdict)
@@ -71,6 +112,11 @@ bool check (vector<string>& v)
                 c += 2;
                 l1 = extract(v[i], c);
                 l2 = extract(v[i], c);
+                if (l1 > tr.size() || l2 > tr.size())
+                {
+                    cout << "Invalid Proof" << endl;
+                    exit(0);
+                }
                 verdict = mt_check(tr, v[i], l1, l2-1);
 
                 if (!verdict)

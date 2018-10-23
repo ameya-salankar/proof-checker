@@ -4,7 +4,7 @@
 using namespace std;
 
 /**
- * 
+ * \brief the main checking logic, central checking functions caller
  * 
  * 
  */
@@ -62,6 +62,16 @@ int extract(string s, int& c)
 	
 	c = k;
 	
-	k = stoi(num);
+	
+	try
+	{
+		k = stoi(num);
+	}
+	catch(const exception& e)
+	{
+		cout << "Invalid Proof" << endl;
+		exit(1);
+	}
+
 	return k;
 }

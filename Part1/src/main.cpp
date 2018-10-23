@@ -5,8 +5,9 @@
 using namespace std;
 
 /**
- * main.cpp
- * performs i/o and stuff
+ * \brief main file
+ *        input- string
+ *        output-postfix and infix of logical expression
  */
 
 int main(void)

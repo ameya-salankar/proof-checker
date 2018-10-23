@@ -2,7 +2,12 @@
 #include "helpers.h"
 
 using namespace std;
-
+/**
+ * \brief check statement for or introduction
+ *        parameters-vector<string> &tr, string in, int l1, int l2, vector<string>& v
+ *        return type-true/false
+ *        Note-
+*/
 bool or_introduction_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {
     string temp = string_separate(in), pf_temp, pf_sub;
