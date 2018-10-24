@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            background-color: ghostwhite;
+        }
+        table{
+            margin:10% auto ; border: 2px solid black; width: 70%;
+        }
+        td{
+            margin:0% auto ; border: 2px solid black; width: 25%;  
+        }
+        table p{
+            text-align: center; font-size: 20px; font-weight: 700;
+        }
+        td.input{
+            width: 60%;
+        }
+        td.time{
+            width: 20%;
+        }
+        td.memory{
+            width: 20%
+        }
+        h2.heading,div#testing h1{
+            margin-top:5%;font-weight: bolder; text-align: center; font-size: 35px;
+        }
+        table h3{
+            text-align: center; font-size: 28px; font-weight: 800;
+        }
+        div#Readme{
+            margin: 5% auto;
+            padding: 0%;
+            width: 40%;
+            border: 2px solid black;
+        }
+        div#Readme p{
+            font-size: 25px; font-weight: 500;
+        }
+        div#Readme h3{
+            font-size: 34px; font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div id="Head">
+        <h1 style="text-align: center; margin: 2%; margin-top: 2% ;font-size: 60px; font-weight: bolder">Logic In CS Assignment 2</h1>
+    </div>
+    <div id="Readme">
+        <ul style="margin: 2% auto;font-size:25px">
+            <li>
+                <h3>Compile the Program: <br></h3>
+                <ol style="font-size: 25px">
+                    <li><p>Extract the files</p></li>
+                    <li><p>Execute 'make' command</p></li>
+                    <li><p>Execute './a.out'</p></li>
+                </ol>
+            </li>
+            <li>
+                <p>The input is expected to be well formed</p>
+                <p class="ps"><i><u>Braces covering the complete expression need not be there</u></i></p>
+            </li>
+            <li>
+                <h3>Limitations:</h3>
+                <p>The program may give a warning if a well formed input is not entered</p>
+                <p class="ps"><i><u>This is a segmentation fault handled by csignal (signal handling)</u></i></p>
+            </li>
+            <li><br></li>
+            <li>
+                <p>The program has been tested in a linux environment(Ubuntu)<br>
+                <p><b>Ubuntu version 16.04</b></p>
+                <p><b>c++ version: c++ 11</b></p>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div id="testing" style=" margin:1% auto; margin-top: 10%;border: 2px solid black;width: 55%">
+        <h1 style="font-size: 45px">Testing and Results</h1>
+        <h2 class="heading">Part 1 Testing</h2>
+        <table style="margin:10% auto ;margin-top: 0%; border: 2px solid black; width: 98%">
+            <!-- <tr class="heading-row"><h2 class="heading">Part 1 Testing</h2></tr> -->
+            <tr>
+                <td class="input"><h3>Input</h3></td>
+                <td class="time"><h3>Time Taken(ms)</h3></td>
+                <td class="memory"><h3>Memory(kB)</h3></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>aVb</p></td>
+                <td class="time"><p>7</p></td>
+                <td class="memory"><p>77.9</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>(aVb)^(bVc)</p></td>
+                <td class="time"><p>8</p></td>
+                <td class="memory"><p>74.75</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>((a>b)>d)V(cVd)</p></td>
+                <td class="time"><p>9</p></td>
+                <td class="memory"><p>84.158</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>(((a>b)>c)>d)V((aVb)V(cVd))</p></td>
+                <td class="time"><p>9</p></td>
+                <td class="memory"><p>90.33</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>((a>b)V(b>c))^((aV(b^c))Vc)</p></td>
+                <td class="time"><p>7</p></td>
+                <td class="memory"><p>90.33</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>((~a>(b>~a))>a)>((~a>b)>c)</p></td>
+                <td class="time"><p>6</p></td>
+                <td class="memory"><p>74.75</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>(((a^b)>(aVb))V((aVb)Vc)>((a^b)Vc))^(((a>b)>c)V(a>(b>(a>c))))</p></td>
+                <td class="time"><p>7</p></td>
+                <td class="memory"><p>110.592</p></td>
+            </tr>
+        </table>
+        <h2 class="heading">Part 2 Testing</h2>
+        <table style="margin:10% auto;margin-top: 0% ;margin-bottom: 1%; border: 2px solid black; width: 98%">
+            <!-- <tr class="heading-row"><h2 class="heading">Part 2 Testing</h2></tr> -->
+            <tr>
+                <td class="input"><h3>Input</h3></td>
+                <td class="time"><h3>Time Taken(ms)</h3></td>
+                <td class="memory"><h3>Memory(kB)</h3></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>3<br>
+                        (a>b)>c/P<br>
+                        a>b/P<br>
+                        c/>e/1/2</p></td>
+                <td class="time"><p>3</p></td>
+                <td class="memory"><p>78.6</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>6<br>
+                    (a>b)^(b>c)/P<br>
+                    c/P<br>
+                    c>a/^e1/1<br>
+                    a>b/^e1/1<br>
+                    a/>e/2/3<br>
+                    b/>e/5/4</p></td>
+                <td class="time"><p>7</p></td>
+                <td class="memory"><p>81.08</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>11<br>
+                    (a^b)^c/P<br>
+                    a^b/^e1/1<br>
+                    c/^e2/1<br>
+                    b/^e2/2<br>
+                    b^c/^i/4/3<br>
+                    a/^e1/2<br>
+                    a^c/^i/6/3<br>
+                    (a^c)V(b^c)/Vi2/5<br>
+                    ((a^c)V(b^c))V(aVb)/Vi1/8<br>
+                    c/P<br>
+                    (((a^c)V(b^c))V(aVb))^c/^i/10/9</p></td>
+                <td class="time"><p>9</p></td>
+                <td class="memory"><p>106.16</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>11<br>
+                    (a^b)^c/P<br>
+                    a^b/^e1/1<br>
+                    c/^e2/1<br>
+                    b/^e2/2<br>
+                    b^c/^i/4/3<br>
+                    a/^e1/2<br>
+                    a^c/^i/6/3<br>
+                    (a^c)V(b^c)/Vi2/5<br>
+                    ((a^c)V(b^c))V(aVb)/Vi1/8<br>
+                    c/P<br>
+                    (((a^c)V(b^c))V(aVb))^c/^i/9/10</p></td>
+                <td class="time"><p>8</p></td>
+                <td class="memory"><p>106.16</p></td>
+            </tr>
+            <tr>
+                <td class = "input"><p>8<br>
+                    (((a>b)>c)>d)^((a>(b>(c>d)))^(a>((b>c)>d)))/P<br>
+                    (((a>b)>c)>d)/^e1/1<br>
+                    (a>(b>(c>d)))^(a>((b>c)>d))/^e2/1<br>
+                    (a>(b>(c>d)))/^e1/3<br>
+                    (a>((b>c)>d))/^e2/3<br>
+                    a/P<br>
+                    b>(c>d)/>e/4/6<br>
+                    (b>c)>d/>e/5/6</p></td>
+                <td class="time"><p>9</p></td>
+                <td class="memory"><p>95.8</p></td>
+            </tr>
+        </table>
+    </div>
+    <footer style="margin: 0% auto; margin-bottom: 4%  ;width: 15%;">
+        <a href="Documentation\html\index.html" style="text-decoration: none;"><button style="font-size:20px;margin: 2% auto;text-decoration:none; height: 60px ; border:2px solid black; border-radius: 20px;">Detailed Documentation(Doxygen)</button></a>
+    </footer>
+    <div style="margin: 0% auto; width:50%;">
+        <h2 style="font-weight: bolder;font-size: 38px">Group Members:</h2>
+        <ol style="font-size: 30px">
+            <li><p><b>Lovekush Sharma</b>            <u>ID NO.: 2017A7PS0125H</u></p></li>
+            <li><p><b>Ameya Salankar</b>            <u>ID NO.: 2017A7PS0182H</u></p></li>
+            <li><p><b>Atharva Sune</b>            <u>ID NO.: 2017A7PS0183H</u></p></li>
+        </ol>
+    </div>
+</body>
+</html>
