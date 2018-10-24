@@ -1,19 +1,17 @@
-#include <iostream>
 #include "tree.h"
 
 using namespace std;
 
 /**
- * tree.cpp
- * implementation of the tree class
+ * \brief Takes a postfix string and implements it in its parse tree form
+ * \param s a postfix string
+ * \param index the position of the current character in s
  */
 
 void tree :: constr_pt(string s, int& index)
 {
-	///Set the root variable
 	root = s[index];
 
-	///If propositional atom, declare it a leaf and return
 	if ((s[index] >= 'a' && s[index] <= 'z') || index == 0)
 	{
 		left = NULL;
@@ -21,22 +19,10 @@ void tree :: constr_pt(string s, int& index)
 		return;
 	}
 
-	/**
-	 * If symbol
-	 *	  make a new right node
-	 *	  set its prev member to the current node in the tree
-	 *	  recursively call the right node's constr_pt function on a decremented index
-	 *	  
-	 *	  if root is a ~ symbol,
-	 *	  	no left node exists, so return
-	 *
-	 *	  repeat the same with the left node
-	 */
-
 	else if (s[index] == '~' || s[index] == 'V' || s[index] == '^' || s[index] == '>')
 	{
 		right = new tree[sizeof(tree)];
-		right->setprev(prev);
+		right->setprev(this);
 		index--;
 		right->constr_pt(s, index);
 
@@ -56,16 +42,20 @@ void tree :: constr_pt(string s, int& index)
 	}
 }
 
+/**
+ * \brief Sets the prev member of the object to pos (which is a parent of the node)
+ * \param pos a pointer to a parent
+ */
 void tree :: setprev(tree* pos)
 {
 	prev = pos;
 }
 
-
 /**
-	infix_tr function
-	traverses in the order : left root right
-*/
+ * \brief Generates an infix notation of the tree
+ * Generates infix by inorder traversal of the tree
+ * \param out a string to store the infix notation
+ */
 void tree :: infix_tr(string& out)
 {
 	if (!check_root())
@@ -85,11 +75,11 @@ void tree :: infix_tr(string& out)
 	}
 }
 
-
 /**
-	postfix_tr function
-	traverses in the order : left right root
-*/
+ * \brief Generates an infix notation of the tree
+ * Generates postfix by postorder traversal of the tree
+ * \param out a string to store the postfix notation
+ */
 void tree :: postfix_tr(string& out)
 {
 	if (left != NULL)
@@ -101,15 +91,33 @@ void tree :: postfix_tr(string& out)
 	out.push_back(root);
 }
 
-
 /**
-	check_root function
-	returns true if the root is a propositional atom (i.e. an alphabet)
-*/
+ * \brief Checks whether the root is a propositional atom
+ * \return a boolean value corresponding to the case
+ */
+
 bool tree :: check_root(void)
 {
 	if (root >='a' && root <='z')
 		return true;
 	else
 		return false;
+}
+
+/**
+ * \brief Frees the tree from the memory
+ * Traverses in the order : left right root
+ */
+void tree :: dels(void)
+{
+	if (left != NULL)
+		left->dels();
+
+	if (right != NULL)
+		right->dels();
+
+	if (left != NULL)
+		delete left;
+	if (right != NULL)
+		delete right;
 }

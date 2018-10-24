@@ -6,16 +6,14 @@ using namespace std;
  * \brief checks proof statement for or introduction
  * \param in string argument
  * \param tr universal truth vector
- * \param l1 integer argument
- * \param l2 integer argument
+ * \param l1 the type of elimination
+ * \param l2 the line number of the 'and' statement
  * \param v vector of input strings 
  * \return boolean value validity of proof statement
 */
 bool or_introduction_check(vector<string> &tr, string in, int l1, int l2, vector<string>& v)
 {
     string temp = string_separate(in), pf_temp, pf_sub;
-    
-    /*l1 is type of elimination and l2 is line number of the and statement*/
 
     stack<char> check;
     string temp_input = v[l2];

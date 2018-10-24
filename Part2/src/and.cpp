@@ -7,24 +7,24 @@ using namespace std;
  * \brief checks proof statement for and introduction
  * \param tr universal truth vector
  * \param in the input string
- * \param l1 integer argument gives line number
- * \param l2 integer argument gives line number
+ * \param l1 integer argument gives the type of elimination
+ * \param l2 integer argument gives the line number
  * \return boolean value either true or false
 */
-bool and_introduction_check(vector<string> &tr, string in, int l1, int l2) /**< checks for the correctness of and introduction */
+bool and_introduction_check(vector<string> &tr, string in, int l1, int l2) /** checks for the correctness of and introduction */
 {
     string temp = string_separate(in), pf_temp;
-    generate(temp, pf_temp);                /**< postfix generation and stored in pf_temp*/
+    generate(temp, pf_temp);                /** postfix generation and stored in pf_temp*/
 
-    if (pf_temp.back() == '^')              /**< first check if and is present*/
+    if (pf_temp.back() == '^')              /** first check if and is present*/
     {
         string correct = tr[l1];
         correct.append(tr[l2]);
         correct.push_back('^');
 
-        if (correct == pf_temp)             /**< both in universal are part of that in the given test string*/
+        if (correct == pf_temp)             /** both in universal are part of that in the given test string*/
         {
-            tr.push_back(pf_temp);          /**< input the correct statement in the truth array*/
+            tr.push_back(pf_temp);          /** input the correct statement in the truth array*/
             return true;
         }
     }
@@ -43,8 +43,6 @@ bool and_elimination_check(vector<string> &tr, string in, int l1, int l2, vector
 {
     string temp = string_separate(in), pf_temp;
     generate(temp, pf_temp);
-
-    /*l1 is type of elimination and l2 is line number of the and statement*/
     
     stack<char> check;
     string temp_input = v[l2];

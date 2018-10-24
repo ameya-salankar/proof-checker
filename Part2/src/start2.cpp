@@ -3,18 +3,18 @@
 #include "helpers.h"
 
 using namespace std;
+
 /**
- * \brief main file
- * input - string
- * output- valid proof/invalid proof
- * 
-*/
+ * \brief A function for handling the part 2 of the assignment
+ * Performs its own I/O
+ */
 void start_part2 (void)
 {
 	int length;
 	string str;
 	vector<string> v;
 	
+	cout << "Enter a proof below:\n\n";
 	cin >> length;
 
 	for (int i = 0; i < length; ++i)
@@ -24,7 +24,7 @@ void start_part2 (void)
 	}
 	
 	if (check(v))
-		cout << "Valid Proof" << endl;
+		cout << "\nValid Proof\n" << endl;
 	else
-		cout << "Invalid Proof" << endl;
+		cout << "\nInvalid Proof\n" << endl;
 }

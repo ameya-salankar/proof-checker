@@ -16,15 +16,7 @@ bool impl_elimination_check(vector<string> &tr, string in, int l1, int l2)
     generate(temp, pf_temp);
     
     if (tr[l1].back() == '>')
-    {
-    
-        /**
-		 * if p is substring of p > q and
-		 * first element of postfixes of p and p>q are same and
-		 * q is a substring of p>q
-		 * then true
-		 */
-    
+    {    
         string correct  = tr[l2];
         correct.append(pf_temp);
         correct.push_back('>');
@@ -52,19 +44,11 @@ bool mt_check(vector<string> &tr, string in, int l1, int l2)
     generate(temp, pf_temp);
     pf_temp.pop_back();
     
-    // int l = pf_temp.length(), l1 = (in[pos] - '0') - 1, l2 = (in[pos + 2] - '0') - 1;
-
     string pf_right = tr[l2];
     pf_right.pop_back();
 
     if (tr[l1].back() == '>')
     {
-        /**
-		 * if p is substring of p > q and
-		 * first element of postfixes of p and p>q are same and
-		 * q is a substring of p>q
-		 * then true
-		 */
         string correct = pf_temp;
         correct.append(pf_right);
         correct.push_back('>');
