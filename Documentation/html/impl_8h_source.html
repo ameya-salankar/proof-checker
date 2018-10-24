@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment-2: Part2/functions/impl.h Source File</title>
+<title>Assignment-2: Part2/include/impl.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Assignment-2
    </div>
+   <div id="projectbrief">Assignment 2 of Logic in CS</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('impl_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,26 +85,23 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_b03cbc9b96837681d19445215b8c3afe.html">Part2</a></li><li class="navelem"><a class="el" href="dir_d78a2d2ecc93e1a4c824d25a0a639b05.html">functions</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">impl.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="impl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMPL_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMPL_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#a7999ed20d3861248609701b6290c8f4a">impl_elimination_check</a>(vector&lt;string&gt; &amp;tr, <span class="keywordtype">string</span> in, <span class="keywordtype">int</span> pos);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#aae05915ac00372f0ed910fed278d5406">mt_check</a>(vector&lt;string&gt; &amp;tr, <span class="keywordtype">string</span> in, <span class="keywordtype">int</span> pos);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#af37a107ed9bc5b5beb21e6f90f576653">check_impl_left</a>(<span class="keywordtype">string</span> part, <span class="keywordtype">string</span> whole);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#a9c4d399f18e8260acb178b7bdd4c1275">check_impl_right</a>(<span class="keywordtype">string</span> part, <span class="keywordtype">string</span> whole, <span class="keywordtype">int</span> start);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="impl_8h_html_a7999ed20d3861248609701b6290c8f4a"><div class="ttname"><a href="impl_8h.html#a7999ed20d3861248609701b6290c8f4a">impl_elimination_check</a></div><div class="ttdeci">bool impl_elimination_check(vector&lt; string &gt; &amp;tr, string in, int pos)</div><div class="ttdef"><b>Definition:</b> impl.cpp:6</div></div>
-<div class="ttc" id="impl_8h_html_af37a107ed9bc5b5beb21e6f90f576653"><div class="ttname"><a href="impl_8h.html#af37a107ed9bc5b5beb21e6f90f576653">check_impl_left</a></div><div class="ttdeci">bool check_impl_left(string part, string whole)</div><div class="ttdef"><b>Definition:</b> impl.cpp:62</div></div>
-<div class="ttc" id="impl_8h_html_a9c4d399f18e8260acb178b7bdd4c1275"><div class="ttname"><a href="impl_8h.html#a9c4d399f18e8260acb178b7bdd4c1275">check_impl_right</a></div><div class="ttdeci">bool check_impl_right(string part, string whole, int start)</div><div class="ttdef"><b>Definition:</b> impl.cpp:77</div></div>
-<div class="ttc" id="impl_8h_html_aae05915ac00372f0ed910fed278d5406"><div class="ttname"><a href="impl_8h.html#aae05915ac00372f0ed910fed278d5406">mt_check</a></div><div class="ttdeci">bool mt_check(vector&lt; string &gt; &amp;tr, string in, int pos)</div><div class="ttdef"><b>Definition:</b> impl.cpp:38</div></div>
+<a href="impl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMPL_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMPL_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#a9e8792fd1c4bd99086a02c930713d2de">impl_elimination_check</a>(vector&lt;string&gt; &amp;tr, <span class="keywordtype">string</span> in, <span class="keywordtype">int</span> l1, <span class="keywordtype">int</span> l2);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="impl_8h.html#aa416355c0eace825d8d360ba7a457303">mt_check</a>(vector&lt;string&gt; &amp;tr, <span class="keywordtype">string</span> in, <span class="keywordtype">int</span> l1, <span class="keywordtype">int</span> l2);              </div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="impl_8h_html_a9e8792fd1c4bd99086a02c930713d2de"><div class="ttname"><a href="impl_8h.html#a9e8792fd1c4bd99086a02c930713d2de">impl_elimination_check</a></div><div class="ttdeci">bool impl_elimination_check(vector&lt; string &gt; &amp;tr, string in, int l1, int l2)</div><div class="ttdoc">Takes the proof statement and checks for validity of implication elimination.</div><div class="ttdef"><b>Definition:</b> impl.cpp:13</div></div>
+<div class="ttc" id="impl_8h_html_aa416355c0eace825d8d360ba7a457303"><div class="ttname"><a href="impl_8h.html#aa416355c0eace825d8d360ba7a457303">mt_check</a></div><div class="ttdeci">bool mt_check(vector&lt; string &gt; &amp;tr, string in, int l1, int l2)</div><div class="ttdoc">Takes the proof statement and checks for modus tollens.</div><div class="ttdef"><b>Definition:</b> impl.cpp:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_b03cbc9b96837681d19445215b8c3afe.html">Part2</a></li><li class="navelem"><a class="el" href="dir_014ba4cf23ef1799025e74da1ca72a66.html">include</a></li><li class="navelem"><a class="el" href="impl_8h.html">impl.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

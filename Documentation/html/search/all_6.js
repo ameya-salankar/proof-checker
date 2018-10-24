@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['or_2ecpp',['or.cpp',['../or_8cpp.html',1,'']]],
-  ['or_2eh',['or.h',['../or_8h.html',1,'']]],
-  ['or_5fintroduction_5fcheck',['or_introduction_check',['../or_8cpp.html#a53f2d342abd70c695ee4183cb2557578',1,'or_introduction_check(vector&lt; string &gt; &amp;tr, string in, int pos):&#160;or.cpp'],['../or_8h.html#a53f2d342abd70c695ee4183cb2557578',1,'or_introduction_check(vector&lt; string &gt; &amp;tr, string in, int pos):&#160;or.cpp'],['../helpers_8cpp.html#a53f2d342abd70c695ee4183cb2557578',1,'or_introduction_check(vector&lt; string &gt; &amp;tr, string in, int pos):&#160;helpers.cpp']]]
+  ['impl_2ecpp',['impl.cpp',['../impl_8cpp.html',1,'']]],
+  ['impl_2eh',['impl.h',['../impl_8h.html',1,'']]],
+  ['impl_5felimination_5fcheck',['impl_elimination_check',['../impl_8h.html#a9e8792fd1c4bd99086a02c930713d2de',1,'impl_elimination_check(vector&lt; string &gt; &amp;tr, string in, int l1, int l2):&#160;impl.cpp'],['../impl_8cpp.html#a9e8792fd1c4bd99086a02c930713d2de',1,'impl_elimination_check(vector&lt; string &gt; &amp;tr, string in, int l1, int l2):&#160;impl.cpp']]],
+  ['infix_5ftr',['infix_tr',['../classtree.html#a5406e3546b2127e7e1742b080a2162cb',1,'tree']]],
+  ['is_5fsubstring',['is_substring',['../helpers_8h.html#ac6952bd88d3258d0948388b903c31d00',1,'helpers.h']]]
 ];

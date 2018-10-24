@@ -1,0 +1,5 @@
+var and_8h =
+[
+    [ "and_elimination_check", "and_8h.html#a01058ddafaf9a800e88aae5ef4b6431c", null ],
+    [ "and_introduction_check", "and_8h.html#a8084f507287c803a2e54fe10e9bce89a", null ]
+];

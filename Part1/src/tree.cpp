@@ -7,7 +7,6 @@ using namespace std;
  * \param s a postfix string
  * \param index the position of the current character in s
  */
-
 void tree :: constr_pt(string s, int& index)
 {
 	root = s[index];
@@ -53,6 +52,7 @@ void tree :: setprev(tree* pos)
 
 /**
  * \brief Generates an infix notation of the tree
+ * 
  * Generates infix by inorder traversal of the tree
  * \param out a string to store the infix notation
  */
@@ -76,7 +76,8 @@ void tree :: infix_tr(string& out)
 }
 
 /**
- * \brief Generates an infix notation of the tree
+ * \brief Generates an postfix notation of the tree
+ * 
  * Generates postfix by postorder traversal of the tree
  * \param out a string to store the postfix notation
  */
@@ -95,7 +96,6 @@ void tree :: postfix_tr(string& out)
  * \brief Checks whether the root is a propositional atom
  * \return a boolean value corresponding to the case
  */
-
 bool tree :: check_root(void)
 {
 	if (root >='a' && root <='z')
@@ -106,6 +106,7 @@ bool tree :: check_root(void)
 
 /**
  * \brief Frees the tree from the memory
+ * 
  * Traverses in the order : left right root
  */
 void tree :: dels(void)

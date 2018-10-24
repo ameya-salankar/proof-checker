@@ -7,8 +7,9 @@
 using namespace std;
 
 /** 
- * \brief defines the class for the parse tree's node object
- * This class contains the blueprint for creating a node object in a tree
+ * \brief defines the class for the parse tree's node object.
+ * 
+ * \detailed This class contains the blueprint for creating a node object in a tree
  * and all the functions for modifying the tree.
  */
 
@@ -21,19 +22,24 @@ private:
 	tree* prev;  	/**< pointer to the parent */
 
   public:
-	tree() 			/**< default constructor - set all the pointers to NULL */
+	/**
+	 * \brief The default constructor
+	 * 
+	 * sets all the pointers to NULL 
+	 */
+	tree()
 	{
 		prev = NULL;
 		right = NULL;
 		left = NULL;
 	}
 
-	void constr_pt(string s, int &index); /**< construct parse tree */
-	bool check_root(void);				  /**< checks if the root is an alphabet */
-	void setprev(tree *pos);			  /**< set the previous member */
-	void infix_tr(string &out);			  /**< infix generation from the parse tree */
-	void postfix_tr(string &out);		  /**< postfix generation from the parse tree */
-	void dels(void);					  /**< delete the parse tree from the memory */
+	void constr_pt(string s, int &index);
+	bool check_root(void);
+	void setprev(tree *pos);
+	void infix_tr(string &out);
+	void postfix_tr(string &out);
+	void dels(void);
 };
 
 #endif

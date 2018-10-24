@@ -3,6 +3,9 @@
 
 using namespace std;
 
+/**
+ * \brief the main function
+ */
 int main(void)
 {
     int c;

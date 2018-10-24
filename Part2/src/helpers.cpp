@@ -4,7 +4,7 @@
 using namespace std;
 
 /**
- * \brief Seperates the string argument into required string to work on
+ * \brief Seperates the proof rule and the statement in the input string
  * \param in string argument
  * \return The separated string
  */

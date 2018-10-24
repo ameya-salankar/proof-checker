@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Assignment-2
    </div>
+   <div id="projectbrief">Assignment 2 of Logic in CS</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +55,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -65,40 +90,28 @@ $(function() {
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>add_stack()
-: <a class="el" href="postfix_8cpp.html#ab29608979dfcfc6bc19db2290d13bcb3">postfix.cpp</a>
-, <a class="el" href="postfix_8h.html#ab29608979dfcfc6bc19db2290d13bcb3">postfix.h</a>
+: <a class="el" href="postfix_8h.html#ab29608979dfcfc6bc19db2290d13bcb3">postfix.h</a>
+, <a class="el" href="postfix_8cpp.html#ab29608979dfcfc6bc19db2290d13bcb3">postfix.cpp</a>
 </li>
 <li>and_elimination_check()
-: <a class="el" href="helpers_8cpp.html#a9165678855aaa4835551d80e15c5cb72">helpers.cpp</a>
-, <a class="el" href="and_8cpp.html#a9165678855aaa4835551d80e15c5cb72">and.cpp</a>
-, <a class="el" href="and_8h.html#a9165678855aaa4835551d80e15c5cb72">and.h</a>
+: <a class="el" href="and_8cpp.html#a01058ddafaf9a800e88aae5ef4b6431c">and.cpp</a>
+, <a class="el" href="and_8h.html#a01058ddafaf9a800e88aae5ef4b6431c">and.h</a>
 </li>
 <li>and_introduction_check()
-: <a class="el" href="and_8cpp.html#ac378e04f6065a0bf05077221162cdcc0">and.cpp</a>
-, <a class="el" href="and_8h.html#ac378e04f6065a0bf05077221162cdcc0">and.h</a>
-, <a class="el" href="helpers_8cpp.html#ac378e04f6065a0bf05077221162cdcc0">helpers.cpp</a>
+: <a class="el" href="and_8cpp.html#a8084f507287c803a2e54fe10e9bce89a">and.cpp</a>
+, <a class="el" href="and_8h.html#a8084f507287c803a2e54fe10e9bce89a">and.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>check()
-: <a class="el" href="check_8cpp.html#a88f48db2687a576308f818f562485b89">check.cpp</a>
-, <a class="el" href="helpers_8h.html#a88f48db2687a576308f818f562485b89">helpers.h</a>
+: <a class="el" href="helpers_8h.html#a88f48db2687a576308f818f562485b89">helpers.h</a>
+, <a class="el" href="check_8cpp.html#a88f48db2687a576308f818f562485b89">check.cpp</a>
 </li>
 <li>check_bracket()
 : <a class="el" href="postfix_8cpp.html#adaeeefb8d1a7a221225770ee21242e91">postfix.cpp</a>
 , <a class="el" href="postfix_8h.html#adaeeefb8d1a7a221225770ee21242e91">postfix.h</a>
-</li>
-<li>check_impl_left()
-: <a class="el" href="impl_8cpp.html#af37a107ed9bc5b5beb21e6f90f576653">impl.cpp</a>
-, <a class="el" href="impl_8h.html#af37a107ed9bc5b5beb21e6f90f576653">impl.h</a>
-, <a class="el" href="helpers_8cpp.html#af37a107ed9bc5b5beb21e6f90f576653">helpers.cpp</a>
-</li>
-<li>check_impl_right()
-: <a class="el" href="helpers_8cpp.html#a9c4d399f18e8260acb178b7bdd4c1275">helpers.cpp</a>
-, <a class="el" href="impl_8cpp.html#a9c4d399f18e8260acb178b7bdd4c1275">impl.cpp</a>
-, <a class="el" href="impl_8h.html#a9c4d399f18e8260acb178b7bdd4c1275">impl.h</a>
 </li>
 <li>check_negation()
 : <a class="el" href="postfix_8cpp.html#a32f6e327ece507204a6d9665006444a2">postfix.cpp</a>
@@ -107,49 +120,65 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_e"></a>- e -</h3><ul>
+<li>extract()
+: <a class="el" href="helpers_8h.html#a3138f820e25f38b055c73bd55bd28c49">helpers.h</a>
+, <a class="el" href="helpers_8cpp.html#a3138f820e25f38b055c73bd55bd28c49">helpers.cpp</a>
+</li>
+</ul>
+
+
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>generate()
-: <a class="el" href="postfix_8cpp.html#ad2b2f4e40ff9f966a4bdee2ad4010d84">postfix.cpp</a>
-, <a class="el" href="postfix_8h.html#ad2b2f4e40ff9f966a4bdee2ad4010d84">postfix.h</a>
+: <a class="el" href="postfix_8h.html#ad2b2f4e40ff9f966a4bdee2ad4010d84">postfix.h</a>
+, <a class="el" href="postfix_8cpp.html#ad2b2f4e40ff9f966a4bdee2ad4010d84">postfix.cpp</a>
 </li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>impl_elimination_check()
-: <a class="el" href="impl_8cpp.html#a9a81ca2b516c8daea1c0e91f32a82a07">impl.cpp</a>
-, <a class="el" href="impl_8h.html#a7999ed20d3861248609701b6290c8f4a">impl.h</a>
-, <a class="el" href="helpers_8cpp.html#a9a81ca2b516c8daea1c0e91f32a82a07">helpers.cpp</a>
+: <a class="el" href="impl_8h.html#a9e8792fd1c4bd99086a02c930713d2de">impl.h</a>
+, <a class="el" href="impl_8cpp.html#a9e8792fd1c4bd99086a02c930713d2de">impl.cpp</a>
 </li>
 <li>is_substring()
-: <a class="el" href="helpers_8cpp.html#ac6952bd88d3258d0948388b903c31d00">helpers.cpp</a>
-, <a class="el" href="helpers_8h.html#ac6952bd88d3258d0948388b903c31d00">helpers.h</a>
+: <a class="el" href="helpers_8h.html#ac6952bd88d3258d0948388b903c31d00">helpers.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>main()
-: <a class="el" href="_part1_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main.cpp</a>
+: <a class="el" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main.cpp</a>
 </li>
 <li>mt_check()
-: <a class="el" href="impl_8cpp.html#aae05915ac00372f0ed910fed278d5406">impl.cpp</a>
-, <a class="el" href="impl_8h.html#aae05915ac00372f0ed910fed278d5406">impl.h</a>
-, <a class="el" href="helpers_8cpp.html#aae05915ac00372f0ed910fed278d5406">helpers.cpp</a>
+: <a class="el" href="impl_8cpp.html#aa416355c0eace825d8d360ba7a457303">impl.cpp</a>
+, <a class="el" href="impl_8h.html#aa416355c0eace825d8d360ba7a457303">impl.h</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>or_introduction_check()
-: <a class="el" href="or_8cpp.html#a53f2d342abd70c695ee4183cb2557578">or.cpp</a>
-, <a class="el" href="or_8h.html#a53f2d342abd70c695ee4183cb2557578">or.h</a>
-, <a class="el" href="helpers_8cpp.html#a53f2d342abd70c695ee4183cb2557578">helpers.cpp</a>
+: <a class="el" href="or_8h.html#aea58870174440580eb3649dfb4ca367f">or.h</a>
+, <a class="el" href="or_8cpp.html#aea58870174440580eb3649dfb4ca367f">or.cpp</a>
 </li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>signal_handler()
+: <a class="el" href="postfix_8h.html#a39e098140cee5ae62a45b9f856992cd0">postfix.h</a>
+, <a class="el" href="postfix_8cpp.html#a39e098140cee5ae62a45b9f856992cd0">postfix.cpp</a>
+</li>
+<li>start_part1()
+: <a class="el" href="start_8h.html#a801216153e35fc546ed19b8bfa52daac">start.h</a>
+, <a class="el" href="start1_8cpp.html#a801216153e35fc546ed19b8bfa52daac">start1.cpp</a>
+</li>
+<li>start_part2()
+: <a class="el" href="start2_8cpp.html#afcf0b1970baf72d543b512253a30cfff">start2.cpp</a>
+, <a class="el" href="start_8h.html#afcf0b1970baf72d543b512253a30cfff">start.h</a>
+</li>
 <li>string_separate()
 : <a class="el" href="helpers_8cpp.html#ad87d8fc1e4382fd4cea56d0b007e0d54">helpers.cpp</a>
 , <a class="el" href="helpers_8h.html#ad87d8fc1e4382fd4cea56d0b007e0d54">helpers.h</a>
@@ -159,16 +188,19 @@ $(function() {
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>tr_input()
-: <a class="el" href="helpers_8cpp.html#a10871d954927205a0932de72ef6b3b11">helpers.cpp</a>
-, <a class="el" href="helpers_8h.html#a10871d954927205a0932de72ef6b3b11">helpers.h</a>
+: <a class="el" href="helpers_8h.html#a10871d954927205a0932de72ef6b3b11">helpers.h</a>
+, <a class="el" href="helpers_8cpp.html#a10871d954927205a0932de72ef6b3b11">helpers.cpp</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

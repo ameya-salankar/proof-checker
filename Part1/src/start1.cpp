@@ -7,6 +7,7 @@ using namespace std;
 
 /**
  * \brief A function for handling the part 1 of the assignment
+ * 
  * Performs its own I/O
  */
 void start_part1(void)

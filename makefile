@@ -43,8 +43,11 @@ $(ODIR1):
 $(ODIR2):
 	mkdir -p $(ODIR2)
 
-.PHONY: clean
+.PHONY: clean cleand
 
 clean:
 	rm -rf $(ODIR1)/*.o
 	rm -rf $(ODIR2)/*.o
+
+cleand:
+	rm -rf Documentation

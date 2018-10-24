@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment-2: Part2/functions/impl.h File Reference</title>
+<title>Assignment-2: Part2/include/impl.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Assignment-2
    </div>
+   <div id="projectbrief">Assignment 2 of Logic in CS</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('impl_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +85,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_b03cbc9b96837681d19445215b8c3afe.html">Part2</a></li><li class="navelem"><a class="el" href="dir_d78a2d2ecc93e1a4c824d25a0a639b05.html">functions</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -73,99 +94,21 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for impl.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="impl_8h__incl.png" border="0" usemap="#_part2_2functions_2impl_8h" alt=""/></div>
-<map name="_part2_2functions_2impl_8h" id="_part2_2functions_2impl_8h">
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="impl_8h__dep__incl.png" border="0" usemap="#_part2_2functions_2impl_8hdep" alt=""/></div>
-<map name="_part2_2functions_2impl_8hdep" id="_part2_2functions_2impl_8hdep">
-</map>
-</div>
 </div>
 <p><a href="impl_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7999ed20d3861248609701b6290c8f4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#a7999ed20d3861248609701b6290c8f4a">impl_elimination_check</a> (vector&lt; string &gt; &amp;tr, string in, int pos)</td></tr>
-<tr class="separator:a7999ed20d3861248609701b6290c8f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae05915ac00372f0ed910fed278d5406"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#aae05915ac00372f0ed910fed278d5406">mt_check</a> (vector&lt; string &gt; &amp;tr, string in, int pos)</td></tr>
-<tr class="separator:aae05915ac00372f0ed910fed278d5406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37a107ed9bc5b5beb21e6f90f576653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#af37a107ed9bc5b5beb21e6f90f576653">check_impl_left</a> (string part, string whole)</td></tr>
-<tr class="separator:af37a107ed9bc5b5beb21e6f90f576653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c4d399f18e8260acb178b7bdd4c1275"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#a9c4d399f18e8260acb178b7bdd4c1275">check_impl_right</a> (string part, string whole, int start)</td></tr>
-<tr class="separator:a9c4d399f18e8260acb178b7bdd4c1275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8792fd1c4bd99086a02c930713d2de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#a9e8792fd1c4bd99086a02c930713d2de">impl_elimination_check</a> (vector&lt; string &gt; &amp;tr, string in, int l1, int l2)</td></tr>
+<tr class="memdesc:a9e8792fd1c4bd99086a02c930713d2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the proof statement and checks for validity of implication elimination.  <a href="#a9e8792fd1c4bd99086a02c930713d2de">More...</a><br /></td></tr>
+<tr class="separator:a9e8792fd1c4bd99086a02c930713d2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa416355c0eace825d8d360ba7a457303"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="impl_8h.html#aa416355c0eace825d8d360ba7a457303">mt_check</a> (vector&lt; string &gt; &amp;tr, string in, int l1, int l2)</td></tr>
+<tr class="memdesc:aa416355c0eace825d8d360ba7a457303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the proof statement and checks for modus tollens.  <a href="#aa416355c0eace825d8d360ba7a457303">More...</a><br /></td></tr>
+<tr class="separator:aa416355c0eace825d8d360ba7a457303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af37a107ed9bc5b5beb21e6f90f576653"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af37a107ed9bc5b5beb21e6f90f576653">&#9670;&nbsp;</a></span>check_impl_left()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool check_impl_left </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>part</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>whole</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c4d399f18e8260acb178b7bdd4c1275"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c4d399f18e8260acb178b7bdd4c1275">&#9670;&nbsp;</a></span>check_impl_right()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool check_impl_right </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>part</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>whole</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>start</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7999ed20d3861248609701b6290c8f4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7999ed20d3861248609701b6290c8f4a">&#9670;&nbsp;</a></span>impl_elimination_check()</h2>
+<a id="a9e8792fd1c4bd99086a02c930713d2de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8792fd1c4bd99086a02c930713d2de">&#9670;&nbsp;</a></span>impl_elimination_check()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +129,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
+          <td class="paramname"><em>l1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -195,13 +144,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p class="">if p is substring of p &gt; q and first element of postfixes of p and p&gt;q are same and q is a substring of p&gt;q then true</p>
-<p class="">if p is substring of p &gt; q and first element of postfixes of p and p&gt;q are same and q is a substring of p&gt;q then true</p>
+
+<p>Takes the proof statement and checks for validity of implication elimination. </p>
+<p class="">check statement for implication elimination</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>string argument </td></tr>
+    <tr><td class="paramname">tr</td><td>universal truth vector </td></tr>
+    <tr><td class="paramname">l1</td><td>integer argument line number telling about the implication statement </td></tr>
+    <tr><td class="paramname">l2</td><td>integer argument line number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean validity of the proof statement </dd></dl>
 
 </div>
 </div>
-<a id="aae05915ac00372f0ed910fed278d5406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae05915ac00372f0ed910fed278d5406">&#9670;&nbsp;</a></span>mt_check()</h2>
+<a id="aa416355c0eace825d8d360ba7a457303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa416355c0eace825d8d360ba7a457303">&#9670;&nbsp;</a></span>mt_check()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +182,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
+          <td class="paramname"><em>l1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -232,14 +198,31 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Takes the proof statement and checks for modus tollens. </p>
+<p class="">check statement for modus tollens</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>string argument </td></tr>
+    <tr><td class="paramname">tr</td><td>universal truth vector </td></tr>
+    <tr><td class="paramname">l1</td><td>integer argument </td></tr>
+    <tr><td class="paramname">l2</td><td>integer argument </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean validity of the proof statement </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_b03cbc9b96837681d19445215b8c3afe.html">Part2</a></li><li class="navelem"><a class="el" href="dir_014ba4cf23ef1799025e74da1ca72a66.html">include</a></li><li class="navelem"><a class="el" href="impl_8h.html">impl.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

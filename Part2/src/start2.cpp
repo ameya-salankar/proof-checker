@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * \brief A function for handling the part 2 of the assignment
+ * 
  * Performs its own I/O
  */
 void start_part2 (void)
